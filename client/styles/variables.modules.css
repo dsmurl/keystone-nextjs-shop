@@ -1,0 +1,49 @@
+@import './fonts.css';
+
+:root {
+
+  /* COLORS */
+  --cards-core-blue-01: #084E77;
+  --accent-light-blue-01: #397192;
+  --accent-dark-blue-01: #063E5F;
+
+  --cards-core-blue-02: #009EEB;
+  --accent-light-blue-02: #33B1EF;
+  --accent-dark-blue-02: #007EBC;
+
+  --accent-white-01: #FFFFFF;
+  --accent-gray-01: #F7F9FA;
+  --accent-gray-02: #ECECF0;
+  --accent-gray-03: #CCCCCC;
+  --accent-gray-04: #999999;
+  --accent-gray-05: #454545;
+  --accent-gray-06: #666666;
+  --accent-gray-07: #90a4ae;
+
+  --accent-green-01: #5CB85C;
+  --accent-green-02: #7CC67C;
+  --accent-green-03: #499349;
+  --accent-orange-01: #F6A623;
+  --accent-orange-02: #F7B74F;
+  --accent-orange-03: #C4841C;
+  --accent-red-01: #D0011B;
+  --accent-red-02: #D93448;
+  --accent-red-03: #A60115;
+
+  /* FONTS */
+  --primary-font: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --secondary-font: 'Ubuntu', 'Helvetica', 'Arial', sans-serif;
+  --icon-font: 'FontAwesome';
+
+  --base-font-size: 15px;
+  --font-size-smaller: calc(0.5 * var(--base-font-size));
+  --font-size-small: calc(0.75 * var(--base-font-size));
+  --font-size-normal: var(--base-font-size);
+  --font-size-big: calc(1.2 * var(--base-font-size));
+  --font-size-bigger: calc(1.4 * var(--base-font-size));
+
+  --font-weight-lighter: 300;
+  --font-weight-normal: 400;
+  --font-weight-semi-bold: 500;
+  --font-weight-bold: 700;
+}

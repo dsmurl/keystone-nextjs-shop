@@ -1,0 +1,35 @@
+{
+  "name": "glass-shop",
+  "version": "1.0.0",
+  "description": "A Glass Shop CMS website make with Keystone JS CMS with React and Redux",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "compile": "webpack --config webpack/webpack.config.js",
+    "test": "test"
+  },
+  "author": "Dsmurl",
+  "license": "ISC",
+  "dependencies": {
+    "keystone": "^4.0.0",
+    "normalize.css": "^8.0.0",
+    "path": "^0.12.7",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-flexbox-grid": "^2.1.2",
+    "react-router-dom": "^4.3.1",
+    "underscore": "^1.9.1",
+    "whatwg-fetch": "^2.0.4"
+  },
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  }
+}

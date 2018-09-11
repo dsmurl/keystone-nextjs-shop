@@ -1,0 +1,86 @@
+/*@import './fonts.css';*/
+
+/*!* COLORS *!*/
+
+/*$cards-core-blue-01: #084E77;*/
+/*$accent-light-blue-01: #397192;*/
+/*$accent-dark-blue-01: #063E5F;*/
+
+/*$cards-core-blue-02: #009EEB;*/
+/*$accent-light-blue-02: #33B1EF;*/
+/*$accent-dark-blue-02: #007EBC;*/
+
+/*$accent-white-01: #FFFFFF;*/
+/*$accent-gray-01: #F7F9FA;*/
+/*$accent-gray-02: #ECECF0;*/
+/*$accent-gray-03: #CCCCCC;*/
+/*$accent-gray-04: #999999;*/
+/*$accent-gray-05: #454545;*/
+/*$accent-gray-06: #666666;*/
+/*$accent-gray-07: #90a4ae;*/
+
+/*$accent-green-01: #5CB85C;*/
+/*$accent-green-02: #7CC67C;*/
+/*$accent-green-03: #499349;*/
+/*$accent-orange-01: #F6A623;*/
+/*$accent-orange-02: #F7B74F;*/
+/*$accent-orange-03: #C4841C;*/
+/*$accent-red-01: #D0011B;*/
+/*$accent-red-02: #D93448;*/
+/*$accent-red-03: #A60115;*/
+
+/*!* ICONS *!*/
+
+/*$icon_network_visa: '\f1f0';*/
+/*$icon_network_mastercard: '\f1f1';*/
+/*$icon_network_discover: '\f1f2';*/
+/*$icon_network_amex: '\f1f3';*/
+
+
+/*$h1-font-family: 'Ubuntu', sans-serif;*/
+/*$h1-font-weight: 700;*/
+/*$h1-font-size: 21px;*/
+/*$h1-line-height: 28px;*/
+
+/*$h2-font-family: 'Ubuntu', sans-serif;*/
+/*$h2-font-weight: 500;*/
+/*$h2-font-size: 16px;*/
+/*$h2-line-height: 24px;*/
+
+/*$h3-font-family: 'Ubuntu', sans-serif;*/
+/*$h3-font-weight: 700;*/
+/*$h3-font-size: 13px;*/
+/*$h3-line-height: 18px;*/
+/*$h3-text-transform: uppercase;*/
+
+/*$body-font-family: 'Roboto', sans-serif;*/
+/*$body-font-weight: 400;*/
+/*$body-font-size: 15px;*/
+/*$body-line-height: 23px;*/
+
+/*$small-font-family: 'Roboto', sans-serif;*/
+/*$small-font-weight: 300;*/
+/*$small-font-size: 12px;*/
+/*$small-line-height: 18px;*/
+
+/*$label-font-family: 'Roboto', sans-serif;*/
+/*$label-font-weight: 500;*/
+/*$label-font-size: 13px;*/
+/*$label-line-height: 18px;*/
+
+/*$table-header-font-family: 'Roboto', sans-serif;*/
+/*$table-header-font-weight: 400;*/
+/*$table-header-font-size: 13px;*/
+/*$table-header-line-height: 1.38;*/
+
+/*$table-font-family: 'Roboto', sans-serif;*/
+/*$table-font-weight: 300;*/
+/*$table-font-size: 14px;*/
+/*$table-line-height: 1.29;*/
+
+/*$table-small-font-family: 'Roboto', sans-serif;*/
+/*$table-small-font-weight: 300;*/
+/*$table-small-font-size: 10px;*/
+/*$table-small-line-height: 1.8;*/
+
+/*$icon-font: 'FontAwesome';*/

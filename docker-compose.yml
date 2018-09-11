@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+#  mongodb:
+#    image: 'bitnami/mongodb:latest'
+#    labels:
+#      kompose.service.type: nodeport
+#    ports:
+#      - "27017:27017"
+#    environment:
+#      - MONGODB_USERNAME=app
+#      - MONGODB_PASSWORD=app
+#      - MONGODB_DATABASE=glass-shop-cms
+#    volumes:
+#      - 'mongodb_master_data:/bitnami'
+#
+#volumes:
+#  mongodb_master_data:
+#    driver: local
+
+
+
+  mongodb:
+    image: 'mongo:4.0.1'
+    ports:
+      - '27017:27017'
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=rootpass
+      - MONGO_INITDB_DATABASE=glassshop_cms_db
+    volumes:
+      - './mongo/db:/data/db'
+      - './mongo/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d'
