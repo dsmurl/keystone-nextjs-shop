@@ -21,7 +21,7 @@ services:
 
 
   mongodb:
-    image: 'mongo:4.0.1'
+    image: 'mongo:3.6.7'
     ports:
       - '27017:27017'
     restart: always

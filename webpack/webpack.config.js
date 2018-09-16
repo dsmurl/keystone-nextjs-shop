@@ -10,7 +10,7 @@ module.exports = {
     ],
     // This will be where the final bundle file will be outputed
     output: {
-        path: path.join(__dirname, '/server/public/js/'),
+        path: path.join(__dirname, '../server/public/js/'),
         filename: 'bundle.js',
         publicPath: 'server/public/js/',
     },

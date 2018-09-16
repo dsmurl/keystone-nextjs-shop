@@ -1,3 +1,5 @@
 .idea/
 node_modules/
 .env
+
+mongo/backup/glassshop_cms_db

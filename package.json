@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "compile": "webpack --config webpack/webpack.config.js",
-    "test": "test"
+    "test": "test",
+    "backup": "cd mongo; backup-mongo.sh",
+    "restore": "cd mongo; restore-mongo.sh"
   },
   "author": "Dsmurl",
   "license": "ISC",
