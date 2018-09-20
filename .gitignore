@@ -1,5 +1,6 @@
 .idea/
 node_modules/
 .env
+client-nextjs/.next
 
 mongo/backup/glassshop_cms_db

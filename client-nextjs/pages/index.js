@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import React from 'react'
 
 import HomePage from './HomePage';
+import Header from '../components/Header'
 
 class App extends React.Component {
 
@@ -9,6 +9,7 @@ class App extends React.Component {
 
     render = () => (
         <div>
+            <Header />
             <HomePage />
         </div>
     )

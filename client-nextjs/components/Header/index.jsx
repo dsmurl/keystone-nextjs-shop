@@ -1,10 +1,7 @@
 import React from 'react';
-import styles from './styles.css';
 import PropTypes from 'prop-types';    // eslint-disable-line
-import {Row, Col} from 'react-flexbox-grid';
 import {Redirect} from 'react-router-dom';
-import classNames from 'classnames';
-
+import Link from 'next/link';
 
 /**
  *
@@ -27,7 +24,7 @@ class Header extends React.Component {
     static propTypes = {};    // eslint-disable-line
 
     getBlankState = () => ({
-        nextPage: "",
+        // nextPage: "",
     });
 
     constructor(props) {
@@ -49,14 +46,15 @@ class Header extends React.Component {
      *
      */
 
-    redirectTo = (pageName) => {
-        this.setState({
-            nextPage: pageName,
-        });
-    };
+    // redirectTo = (pageName) => {
+    //     this.setState({
+    //         nextPage: pageName,
+    //     });
+    // };
 
     isSelected = (pathUri) => {
-        return (window.location.pathname === pathUri);
+        // return (window.location.pathname === pathUri);
+        return false;
     };
 
 
@@ -68,20 +66,13 @@ class Header extends React.Component {
      *
      */
 
-    renderNavItem = (path, title) => {
-        return (
-            <div
-                onClick={() => (this.redirectTo(path))}
-                className={classNames(
-                    styles.navItem,
-                    (this.isSelected(path)) ? styles.selected : {}
-                )}
-            >
-                {title}
-            </div>
-        );
-    };
-
+    renderNavItem = (path, title) => (
+        <Link
+            className={`.navItem ${(this.isSelected(path)) ? '.selected' : ''}`}
+            href={path}
+            prefetch
+        >{title}</Link>
+    );
 
     /**
      *
@@ -92,28 +83,58 @@ class Header extends React.Component {
      */
 
     render() {
-        if (this.state.nextPage && this.state.nextPage !== window.location.pathname) {
-            return <Redirect push to={this.state.nextPage}/>;
-        }
+        // if (this.state.nextPage && this.state.nextPage !== window.location.pathname) {
+        //     return <Redirect push to={this.state.nextPage}/>;
+        // }
 
         return (
-            <Row>
-                <Col xs={12} sm={12}>
+            <div>
+                <div className=".header">
+                    {this.renderNavItem("/", "Home")}
+                    {this.renderNavItem("/gallery", "Gallery")}
+                    {this.renderNavItem("/contact", "Contact")}
+                </div>
 
-                    <Row className={styles.header}>
-                        <Col smOffset={6} xs={12} sm={2}>
-                            {this.renderNavItem("/", "Home")}
-                        </Col>
-                        <Col xs={12} sm={2}>
-                            {this.renderNavItem("/gallery", "Gallery")}
-                        </Col>
-                        <Col xs={12} sm={2}>
-                            {this.renderNavItem("/contact", "Contact")}
-                        </Col>
-                    </Row>
+                { /*language=CSS*/ }
+                <style jsx>
+                    {`
+                        .header {
+                            background: lightblue;
+                            display: flex;
+                            flex-direction: row-reverse;
+                        }
 
-                </Col>
-            </Row>
+                        .navItem {
+                            background: lightblue;
+
+                            text-align: center;
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 20px;
+
+                            padding: 5px;
+                        }
+
+                        .navItem:hover {
+                            box-shadow: 0px -2px 0px #0000FF inset;
+                        }
+
+                        .selected {
+                            font-size: 18px;
+                            box-shadow: 0px -1px 0px #0000FF inset;
+                            color: #0000FF;
+                        }
+
+                        @media only screen and (min-width: 500px) {
+                            .header {
+                                background: lightblue;
+                                display: flex;
+                                flex-direction: column-reverse; /* or inline-flex */
+                            }
+                        }
+                    `}
+                </style>
+            </div>
         );
     }
 }

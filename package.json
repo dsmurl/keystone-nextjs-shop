@@ -7,8 +7,9 @@
     "start": "node index.js",
     "compile": "webpack --config webpack/webpack.config.js",
     "test": "test",
-    "backup": "cd mongo; backup-mongo.sh",
-    "restore": "cd mongo; restore-mongo.sh"
+    "db:backup": "cd mongo; ./backup-mongo.sh",
+    "db:restore": "cd mongo; ./restore-mongo.sh",
+    "db:drop": "cd mongo; ./drop-mongo.sh"
   },
   "author": "Dsmurl",
   "license": "ISC",
