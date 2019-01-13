@@ -4,3 +4,5 @@ node_modules/
 client-nextjs/.next
 
 mongo/backup/glassshop_cms_db
+
+server/public/images/*
