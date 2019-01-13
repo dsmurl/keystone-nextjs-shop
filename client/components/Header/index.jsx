@@ -102,7 +102,7 @@ class Header extends React.Component {
 
                     <Row className={styles.header}>
                         <Col smOffset={6} xs={12} sm={2}>
-                            {this.renderNavItem("/", "Home")}
+                            {this.renderNavItem("/", "Home Old 1")}
                         </Col>
                         <Col xs={12} sm={2}>
                             {this.renderNavItem("/gallery", "Gallery")}

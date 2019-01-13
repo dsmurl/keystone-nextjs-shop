@@ -1,14 +1,28 @@
-//import keystone
-var keystone = require('keystone');
+// Simulate config options from your production environment by
+// customising the .env file in your project's root folder.
+require('dotenv').config();
+const keystone = require('keystone');
+const next = require('next');
 
-// Set up our keystone instance
+// Make a NextJs instance
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({
+    dev,
+    dir: "./client-nextjs"
+});
+
+// Initialise Keystone with your project's configuration.
+// See http://keystonejs.com/guide/config for available options
+// and documentation.
 keystone.init({
+    'brand': 'Keystone NextJs Art Shop',
+    'session': true,
+
     // The name of the KeystoneJS application
-    'name': 'Glass Shop',
+    'name': 'Hill Country Ornate Shop',
     // Paths to our application static files
     'static': [
-        './server/public/js/',
-        './server/public/img/',
+        './server/public/',
     ],
     // Keystone includes an updates framework,
     // which you can enable by setting the auto update option to true.
@@ -30,8 +44,17 @@ keystone.init({
 // Load your project's Models
 keystone.import('./server/models');
 
-// Routes
-keystone.set('routes', require('./server/routes'));
+// Start Next app
+app.prepare()
+    .then(() => {
+        // Load your project's Routes
+        keystone.set('routes', require('./server/routes')(app));
 
-// Start Keystone
-keystone.start();
+        // Configure the navigation bar in Keystone's Admin UI
+        keystone.set('nav', {
+            posts: ['ArtWork', 'Image'],
+            users: 'User',
+        });
+
+        keystone.start();
+    });

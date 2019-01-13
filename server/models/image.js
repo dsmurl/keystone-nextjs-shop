@@ -15,7 +15,7 @@ var recipeImgStorage = new keystone.Storage({
     adapter: keystone.Storage.Adapters.FS,
     fs: {
         // required; path where the files should be stored
-        path: keystone.expandPath('server/public/img'),
+        path: keystone.expandPath('server/public/images'),
         generateFilename: function (file, index) {
             console.log('file: ', file);
             return utils.makeUniqueFileName(file.originalname);

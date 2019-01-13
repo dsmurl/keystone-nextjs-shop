@@ -1,6 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
-import fetch from '../../utils/request';
+import fetch from '../../clientUtils/request';
 import PropTypes from 'prop-types';
 
 
@@ -30,7 +29,7 @@ class ArtWorks extends React.Component {
     }
 
     componentWillMount = () => {
-        console.log("Fetching artWorks! ", window.location);
+        // console.log("Fetching artWorks! ", window.location);
 
         fetch(`/api/art-works`, {
             mode: 'cors',
@@ -62,7 +61,7 @@ class ArtWorks extends React.Component {
         console.log('this.state: ', this.state);
 
         return (
-            <div className={styles.artWorksComponent}>
+            <div className="artWorksComponent">
                 <div className="row">
                     <div className="col-sm-12 col-xs-12">
 
@@ -74,6 +73,16 @@ class ArtWorks extends React.Component {
                         />
                     </div>
                 </div>
+
+                { /*language=CSS*/ }
+                <style jsx>
+                    {`
+                        .artWorksComponent {
+                            border: 2px solid blue;
+                            padding: 10px;
+                        }
+                    `}
+                </style>
             </div>
         );
     }

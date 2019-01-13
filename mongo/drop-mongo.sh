@@ -1,3 +1,3 @@
-// Clean out the current mongo/db
+### Clean out the current mongo/db
 
 rm -rf ./db/*

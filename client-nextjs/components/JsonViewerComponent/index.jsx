@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './styles.css';
 import PropTypes from 'prop-types';
 
 /**
@@ -70,9 +69,28 @@ class JsonViewerComponent extends React.Component { // eslint-disable-line react
 		const targetJson = this.props.targetJson;
 
 		return (targetJson) ? (
-			<div className={styles.ccJsonViewerComponent}>
+			<div className="ccJsonViewerComponent">
 				{`${this.props.jsonTitle}:`}
 				<pre dangerouslySetInnerHTML={{__html: this.syntaxHighlight(JSON.stringify(targetJson, null, 4))}}/>
+
+                { /*language=CSS*/ }
+                <style jsx>
+                    {`
+                        .ccJsonViewerComponent { /* stylelint-ignore */
+							/*min-width: 300px;*/
+							margin: 0 auto;
+							/*display: block;*/
+							/*float: right;*/
+							padding: 4px;
+							border: 2px dashed lightblue;
+							background-color: #FFF;
+							font-family: monospace;
+							font-size: smaller;
+						}
+
+						/*.jsonViewerComponent pre {!* stylelint-ignore *! outline: 1px solid #ccc; padding: 5px; margin: 5px;}*/
+                    `}
+                </style>
 			</div>
 		) : null
 	}

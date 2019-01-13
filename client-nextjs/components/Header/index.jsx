@@ -91,8 +91,8 @@ class Header extends React.Component {
             <div>
                 <div className=".header">
                     {this.renderNavItem("/", "Home")}
-                    {this.renderNavItem("/gallery", "Gallery")}
-                    {this.renderNavItem("/contact", "Contact")}
+                    {this.renderNavItem("/Gallery", "Gallery")}
+                    {this.renderNavItem("/Contact", "Contact")}
                 </div>
 
                 { /*language=CSS*/ }

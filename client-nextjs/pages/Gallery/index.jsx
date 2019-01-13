@@ -1,11 +1,10 @@
 import React from 'react';
-import styles from './styles.css';
 import PropTypes from 'prop-types';    // eslint-disable-line
-import {Row, Col} from 'react-flexbox-grid';
-import requestService from '../../utils/request';
+import requestService from '../../clientUtils/request';
 
 
 import ArtWorks from '../../components/ArtWorks';
+import Header from "../../components/Header";
 
 
 /**
@@ -100,10 +99,10 @@ class Gallery extends React.Component {
     // renderCar = (car) => (
     //     <Row key={`car_block_${this.semiGuid()}`}>
     //         <Col smOffset={1} sm={10} xsOffset={1} xs={10}>
-    //             <div className={styles.carBlock}>
-    //                 <span className={styles.dataField}>Year:</span> <span className={styles.data}> {car.year} </span><br />
-    //                 <span className={styles.dataField}>Model:</span> <span className={styles.data}> {car.model} </span><br />
-    //                 <span className={styles.dataField}>Color:</span> <span className={styles.data}> {car.color} </span><br />
+    //             <div className="carBlock">
+    //                 <span className="dataField">Year:</span> <span className="data"> {car.year} </span><br />
+    //                 <span className="dataField">Model:</span> <span className="data"> {car.model} </span><br />
+    //                 <span className="dataField">Color:</span> <span className="data"> {car.color} </span><br />
     //             </div>
     //         </Col>
     //     </Row>
@@ -121,16 +120,54 @@ class Gallery extends React.Component {
     render() {
 
         return (
-            <Row>
-                <Col xs={12} sm={12}>
+            <div>
+                <Header />
+                <div>
                     <h3>Gallery</h3>
                     <ArtWorks />
 
-                    {/*<div className={styles.carsBlock}>*/}
+                    {/*<div className="carsBlock">*/}
                         {/*{ this.state.carsLibrary.map((car) => (this.renderCar(car))) }*/}
                     {/*</div>*/}
-                </Col>
-            </Row>
+                </div>
+
+
+
+                { /*language=CSS*/ }
+                <style jsx>
+                    {`
+                        .carsBlock {
+                            margin: 15px;
+                        }
+
+                        .carBlock {
+                            box-shadow: 0 1px 0 0 lightgray;
+                            border: 1px solid grey;
+                            margin-bottom: 10px;
+                            padding: 15px;
+                        }
+
+                        .dataField {
+                            display: inline-block;
+                            font-size: 16px;
+                            font-weight: bold;
+                            width: 100px;
+
+                            -moz-user-select: -moz-none;
+                            -khtml-user-select: none;
+                            -webkit-user-select: none;
+                            -ms-user-select: none;
+                            user-select: none;
+                        }
+
+                        .data {
+                            display: inline-block;
+                        }
+                    `}
+                </style>
+
+
+            </div>
         );
     }
 }
