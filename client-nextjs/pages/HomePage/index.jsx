@@ -64,7 +64,7 @@ class HomePage extends React.Component {
 
         return (
             <div className="homePage">
-                <Header />
+                <Header page="Home"/>
                 <h3>Home Page</h3>
                 <Footer />
 

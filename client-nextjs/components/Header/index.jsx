@@ -23,10 +23,12 @@ class Header extends React.Component {
      *
      **/
 
-    static propTypes = {};    // eslint-disable-line
+    static propTypes = {
+        page: PropTypes.string
+    };    // eslint-disable-line
 
     getBlankState = () => ({
-        // nextPage: "",
+        page: ""
     });
 
     constructor(props) {
@@ -54,9 +56,8 @@ class Header extends React.Component {
     //     });
     // };
 
-    isSelected = (pathUri) => {
-        // return (window.location.pathname === pathUri);
-        return false;
+    isSelected = (title) => {
+        return this.props.page === title;
     };
 
 
@@ -69,7 +70,7 @@ class Header extends React.Component {
      */
 
     renderNavItem = (path, title) => (
-        <div className={`navItem ${(this.isSelected(path)) ? 'selected' : ''}`}>
+        <div className={`navItem ${(this.isSelected(title)) ? 'selected' : ''}`}>
             <Link
                 href={path}
                 prefetch

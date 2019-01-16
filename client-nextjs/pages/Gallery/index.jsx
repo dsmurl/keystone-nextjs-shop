@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';    // eslint-disable-line
 
 import ArtWorks from '../../components/ArtWorks';
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 
 /**
@@ -87,9 +88,10 @@ class Gallery extends React.Component {
 
         return (
             <div className="content">
-                <Header />
+                <Header page="Gallery"/>
                 <h3>Gallery Page</h3>
                 <ArtWorks />
+                <Footer />
 
                 { /*language=CSS*/ }
                 <style jsx>
