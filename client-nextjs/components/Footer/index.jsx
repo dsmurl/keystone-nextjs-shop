@@ -1,8 +1,6 @@
 import React from 'react';
-import styles from './styles.css';
-import {Row, Col} from 'react-flexbox-grid';
-import {Link} from 'react-router-dom';
-// import FontAwesome from 'react-fontawesome';
+import Link from 'next/link';
+import FontAwesome from 'react-fontawesome';
 
 
 /**
@@ -63,18 +61,42 @@ class Footer extends React.Component {
     render() {
 
         return (
-            <Row className={styles.footer}>
-                <Col xs={11} sm={11}>
-                    Footer
-                </Col>
-                <Col xs={1} sm={1}>
-                    <div className={styles.adminButton}>
-                        {/*<Link to={`/hco_admin`}>*/}
-                            {/*<FontAwesome name="pencil-square-o"/>*/}
-                        {/*</Link>*/}
-                    </div>
-                </Col>
-            </Row>
+            <div className="content">
+                <div>
+                    Hill Country Ornate TM 2018
+                </div>
+                <div className="adminButton">
+                    <Link
+                        href="/keystone"
+                    ><a>Admin</a></Link>
+                </div>
+
+                { /*language=CSS*/ }
+                <style jsx>
+                    {`
+                        .content {
+                            text-align: center;
+                            background: lightskyblue;
+
+                            font-size: 14px;
+
+                            -moz-user-select: -moz-none;
+                            -khtml-user-select: none;
+                            -webkit-user-select: none;
+                            -ms-user-select: none;
+                            user-select: none;
+
+                            padding: 5px;
+                        }
+
+                        .adminButton {
+                            color: grey;
+                            text-align: right;
+                            font-size: 0.5rem;
+                        }
+                    `}
+                </style>
+            </div>
         );
     }
 }

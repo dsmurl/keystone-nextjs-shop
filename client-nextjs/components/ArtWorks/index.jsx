@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 
 import JsonViewerComponent from '../JsonViewerComponent';
+import ArtWork from '../ArtWork';
 
 
 class ArtWorks extends React.Component {
@@ -28,7 +29,7 @@ class ArtWorks extends React.Component {
         this.state = this.getBlankState();
     }
 
-    componentWillMount = () => {
+    componentDidMount = () => {
         // console.log("Fetching artWorks! ", window.location);
 
         fetch(`/api/art-works`, {
@@ -38,16 +39,23 @@ class ArtWorks extends React.Component {
             }
         })
             .then((data) => {
-                // const newData = data.map((image) => ({
-                //     original: `http://www.sambagot.com/${galleryName}/gallery-images/${image}`,
-                //     thumbnail: `http://www.sambagot.com/${galleryName}/gallery-images/${image}`,
-                // }));
-
                 this.setState({
                     artWorks: data,
                 });
             });
     };
+
+
+
+    /**
+     *
+     *
+     *      Sub Renderers
+     *
+     *
+     */
+
+
 
     /**
      *
@@ -58,28 +66,31 @@ class ArtWorks extends React.Component {
      */
 
     render() {
-        console.log('this.state: ', this.state);
-
         return (
-            <div className="artWorksComponent">
-                <div className="row">
-                    <div className="col-sm-12 col-xs-12">
-
-                        ARTWORKS COMPONENT
-
-                        <JsonViewerComponent
-                            targetJson={this.state.artWorks}
-                            jsonTitle={`Art Works`}
-                        />
-                    </div>
+            <div className="content">
+                <div className="itemList">
+                    {
+                        this.state.artWorks.map(artWork => (<ArtWork data={artWork}  key={artWork._id}/>))
+                    }
                 </div>
+
+                <JsonViewerComponent
+                    targetJson={this.state.artWorks}
+                    jsonTitle={`Art Works`}
+                />
 
                 { /*language=CSS*/ }
                 <style jsx>
                     {`
-                        .artWorksComponent {
+                        .content {
+
+                        }
+
+                        .itemList {
                             border: 2px solid blue;
                             padding: 10px;
+                            border-radius: 4px;
+                            margin-bottom: 20px;
                         }
                     `}
                 </style>

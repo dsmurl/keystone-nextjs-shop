@@ -6,7 +6,8 @@ class AboutPage extends React.Component {
     render = () => (
         <div>
             <Header />
-            <p>Contact Me!</p>
+            <h3>Contact Page</h3>
+            <p>  Contact Me!</p>
         </div>
     )
 }

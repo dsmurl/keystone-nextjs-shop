@@ -18,74 +18,14 @@
  * http://expressjs.com/api.html#app.VERB
  */
 
-// const keystone = require('keystone');
-//
-// // Setup Route Bindings
-// exports = module.exports = nextApp => keystoneApp => {
-//
-//     // Next request handler
-//     const handle = nextApp.getRequestHandler();
-//
-//     keystoneApp.get('/api/posts', (req, res, next) => {
-//         const Post = keystone.list('Post');
-//         Post.model
-//             .find()
-//             .where('state', 'published')
-//             .sort('-publishedDate')
-//             .exec(function (err, results) {
-//                 if (err) throw err;
-//                 res.json(results);
-//             });
-//     });
-//
-//     keystoneApp.get('*', (req, res) => {
-//         return handle(req, res);
-//     });
-// };
-
-
-
 
 var artWorkService = require('../api/artWorks');
 
 // Export our app routes
 exports = module.exports = (nextApp) => (keystoneApp) => {
 
-    // var renderHome = function (req, res) {
-    //     // Render some simple boilerplate html
-    //     function renderFullPage() {
-    //         // Note the div class name here, we will use that as a hook for our React code
-    //         // We are also adding the bundled javascript code
-    //         return `
-    //             <!doctype html>
-    //             <html>
-    //                 <head>
-    //                     <title>Hello Keystone With React And Redux</title>
-    //                 </head>
-    //                 <body>
-    //                     <div class="react-container">
-    //                     </div>
-    //                     <script src="bundle.js"></script>
-    //                 </body>
-    //             </html>
-    //         `;
-    //     }
-    //
-    //     // Send the html boilerplate
-    //     res.send(renderFullPage());
-    // };
-    //
-    // keystoneApp.get('/', renderHome);
-    // keystoneApp.get('/gallery', renderHome);
-    // keystoneApp.get('/contact', renderHome);
-
     keystoneApp.get('/api/art-works', artWorkService.artWorkList);
     keystoneApp.get('/api/art-works/:id', artWorkService.artWorkGet);
-
-
-
-
-
 
     // Next request handler
     const handle = nextApp.getRequestHandler();
@@ -93,6 +33,4 @@ exports = module.exports = (nextApp) => (keystoneApp) => {
     keystoneApp.get('*', (req, res) => {
         return handle(req, res);
     });
-
-
 };

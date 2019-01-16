@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';    // eslint-disable-line
 
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+
 
 /**
  *
@@ -61,13 +64,15 @@ class HomePage extends React.Component {
 
         return (
             <div className="homePage">
+                <Header />
                 <h3>Home Page</h3>
+                <Footer />
 
                 { /*language=CSS*/ }
                 <style jsx>
                     {`
                         .homePage {
-                            background-color: cornflowerblue;
+
                         }
                     `}
                 </style>

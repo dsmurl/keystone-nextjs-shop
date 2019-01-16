@@ -1,10 +1,6 @@
 import React from 'react';
-import styles from './styles.css';
-import fetch from '../../utils/request';
 import PropTypes from 'prop-types';
-
-
-import JsonViewerComponent from '../JsonViewerComponent';
+import CONSTANTS from '../../clientUtils/constants';
 
 
 class ArtWork extends React.Component {
@@ -17,42 +13,44 @@ class ArtWork extends React.Component {
      *
      **/
 
+
     static propTypes = {
-        artWorkId: PropTypes.string,
+        data: PropTypes.object.isRequired,
     };    // eslint-disable-line
 
-    getBlankState = () => ({
-        artWork: {},
-    });
-
-    constructor(props) {
-        super(props);
-
-        this.state = this.getBlankState();
-    }
-
-    componentWillMount = () => {
-        console.log("Fetching artWork! ", window.location);
-
-        // const artWorkId = /[^=]*$/.exec(this.props.location.search)[0];
-
-        fetch(`/api/art-works/${this.props.artWorkId}`, {
-            mode: 'cors',
-            header: {
-                'Access-Control-Allow-Origin': '*',
-            }
-        })
-            .then((data) => {
-                // const newData = data.map((image) => ({
-                //     original: `http://www.sambagot.com/${galleryName}/gallery-images/${image}`,
-                //     thumbnail: `http://www.sambagot.com/${galleryName}/gallery-images/${image}`,
-                // }));
-
-                this.setState({
-                    artWork: data,
-                });
-            });
+    static defaultProps = {
     };
+
+
+
+    /**
+     *
+     *
+     *      Sub Renders
+     *
+     *
+     */
+
+
+    renderImage = (image) => (
+        <div className="image" key={image._id}>
+            <img src={`${CONSTANTS.IMAGES_URI}${image.image.filename}`} width='160px' height='120px'/>
+
+            { /*language=CSS*/ }
+            <style jsx>
+                {`
+
+                    .image {
+                        flex: 1;
+                        margin: 5px;
+                        text-align: center;
+                    }
+                `}
+            </style>
+        </div>
+    );
+
+
 
     /**
      *
@@ -63,21 +61,69 @@ class ArtWork extends React.Component {
      */
 
     render() {
-        console.log('this.state: ', this.state);
-
         return (
-            <div className={styles.artWorkComponent}>
-                <div className="row">
-                    <div className="col-sm-12 col-xs-12">
-
-                        AN ARTWORK COMPONENT
-
-                        <JsonViewerComponent
-                            targetJson={this.state.artWork}
-                            jsonTitle={`Glass Piece: ${this.state.artWorkId}`}
-                        />
-                    </div>
+            <div className="content">
+                <span className="fieldTitle">Name:</span>
+                <span className="name"> { this.props.data.name } </span>
+                <br />
+                <div className="fieldTitle">Description:</div>
+                <div className="description">
+                    <div dangerouslySetInnerHTML={{__html: this.props.data.description}} />
                 </div>
+                <div className="ebayAdLink">
+                    <a href={this.props.data.ebayAdLink} target="_blank">Buy Me Now!!!</a>
+                </div>
+                <br />
+                <div className="images">
+                    { this.props.data.images.map((image) => this.renderImage(image)) }
+                </div>
+                <div className="idTag">
+                    { this.props.data._id }
+                </div>
+
+                { /*language=CSS*/ }
+                <style jsx>
+                    {`
+                        .content {
+                            border: 1px solid blue;
+                            padding: 10px;
+                            border-radius: 4px;
+                        }
+
+                        .fieldTitle {
+                            font-weight: bold;
+                        }
+
+                        .name {
+                            padding-left: 10px;
+                        }
+
+                        .description {
+                            padding-left: 10px;
+                        }
+
+                        .ebayAdLink {
+                            color: blue;
+                            text-align: center;
+                        }
+
+                        .images {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+
+                            align-items: center;
+                            width: 100%;
+
+                            background-color: cornflowerblue;
+                            border-radius: 4px;
+                        }
+
+                        .idTag {
+                            text-align: right;
+                        }
+                    `}
+                </style>
             </div>
         );
     }
