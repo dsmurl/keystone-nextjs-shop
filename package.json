@@ -8,7 +8,9 @@
     "test": "test",
     "db:backup": "cd mongo; ./backup-mongo.sh",
     "db:restore": "cd mongo; ./restore-mongo.sh",
-    "db:drop": "cd mongo; ./drop-mongo.sh"
+    "db:drop": "cd mongo; ./drop-mongo.sh",
+    "start:prod": "forever start index.js",
+    "stop:prod": "forever stopall"
   },
   "author": "Dsmurl",
   "license": "ISC",
