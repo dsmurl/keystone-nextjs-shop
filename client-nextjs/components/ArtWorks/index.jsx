@@ -74,10 +74,10 @@ class ArtWorks extends React.Component {
                     }
                 </div>
 
-                <JsonViewerComponent
-                    targetJson={this.state.artWorks}
-                    jsonTitle={`Art Works`}
-                />
+                {/*<JsonViewerComponent*/}
+                    {/*targetJson={this.state.artWorks}*/}
+                    {/*jsonTitle={`Art Works`}*/}
+                {/*/>*/}
 
                 { /*language=CSS*/ }
                 <style jsx>
