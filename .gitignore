@@ -3,6 +3,6 @@ node_modules/
 .env
 client-nextjs/.next
 
-mongo/backup/glassshop_cms_db
+mongo/backup/shop_cms_db
 
 server/public/images/*

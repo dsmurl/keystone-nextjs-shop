@@ -4,22 +4,24 @@ require('dotenv').config();
 const keystone = require('keystone');
 const next = require('next');
 
+
 // Make a NextJs instance
-const dev = process.env.NODE_ENV !== 'production';
 const app = next({
-    dev,
+    dev: process.env.NODE_ENV !== 'prod',
     dir: "./client-nextjs"
 });
+
+console.log('   ENV: ', process.env.NODE_ENV);
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 keystone.init({
-    'brand': 'Keystone NextJs Art Shop',
+    'brand': 'Keystone NextJs Shop',
     'session': true,
 
     // The name of the KeystoneJS application
-    'name': 'Hill Country Ornate Shop',
+    'name': 'Keystone NextJs Shop',
     // Paths to our application static files
     'static': [
         './server/public/',
@@ -31,8 +33,8 @@ keystone.init({
     // or run transformation scripts against your database.
     'auto update': true,
     // The url for your MongoDB connection
-    // 'mongo': 'mongodb://localhost/glass-shop-cms',
-    'mongo': 'mongodb://glassshop_cms_worker:worker_pass@localhost:27017/glassshop_cms_db',
+    // 'mongo': 'mongodb://localhost/keystone-nextjs-shop',
+    'mongo': 'mongodb://shop_cms_worker:worker_pass@localhost:27017/shop_cms_db',
     // Whether to enable built-in authentication for Keystone's Admin UI,
     'auth': true,
     // The key of the Keystone List for users, required if auth is set to true

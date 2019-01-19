@@ -1,16 +1,16 @@
 {
-  "name": "glass-shop",
+  "name": "keystone-nextjs-shop",
   "version": "1.0.0",
-  "description": "A Glass Shop CMS website make with Keystone JS CMS with React and Redux",
+  "description": "A Shop CMS website make with Keystone JS CMS, React, and Redux",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "test",
+    "build": "next build client-nextjs",
+    "dev": "NODE_ENV=dev nodemon index.js",
+    "start:prod": "NODE_ENV=prod forever start index.js",
+    "stop:prod": "forever stopall",
     "db:backup": "cd mongo; ./backup-mongo.sh",
     "db:restore": "cd mongo; ./restore-mongo.sh",
-    "db:drop": "cd mongo; ./drop-mongo.sh",
-    "start:prod": "forever start index.js",
-    "stop:prod": "forever stopall"
+    "db:drop": "cd mongo; ./drop-mongo.sh"
   },
   "author": "Dsmurl",
   "license": "ISC",
@@ -21,8 +21,8 @@
     "next": "^7.0.2",
     "normalize.css": "^8.0.0",
     "path": "^0.12.7",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
@@ -32,6 +32,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "nodemon": "^1.18.9",
     "style-loader": "^0.23.0",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0"

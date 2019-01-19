@@ -6,7 +6,7 @@
 
 ### Restore the data to mongo
 
-    mongorestore ./glassshop_cms_db -u glassshop_cms_worker -p worker_pass -h localhost:27017 -d glassshop_cms_db --drop
+    mongorestore ./shop_cms_db -u shop_cms_worker -p worker_pass -h localhost:27017 -d shop_cms_db --drop
 
 
 

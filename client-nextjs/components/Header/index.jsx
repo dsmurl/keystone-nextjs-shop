@@ -70,38 +70,40 @@ class Header extends React.Component {
      */
 
     renderNavItem = (path, title) => (
-        <div className={`navItem ${(this.isSelected(title)) ? 'selected' : ''}`}>
-            <Link
-                href={path}
-                prefetch
-            ><a>{title}</a></Link>
+        <Link
+            href={path}
+            prefetch
+        >
+            <div className={`navItem ${(this.isSelected(title)) ? 'selected' : ''}`}>
+                { title }
 
-            { /*language=CSS*/ }
-            <style jsx>
-                {`
-                    .navItem {
-                        background: lightskyblue;
+                { /*language=CSS*/ }
+                <style jsx>
+                    {`
+                        .navItem {
+                            background: lightskyblue;
 
-                        text-align: center;
-                        font-weight: normal;
-                        font-size: 14px;
-                        line-height: 20px;
+                            text-align: center;
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 20px;
 
-                        padding: 5px;
-                    }
+                            padding: 5px;
+                        }
 
-                    .navItem:hover {
-                        box-shadow: 0px -2px 0px #0000FF inset;
-                    }
+                        .navItem:hover {
+                            box-shadow: 0px -2px 0px #0000FF inset;
+                        }
 
-                    .selected {
-                        font-size: 18px;
-                        box-shadow: 0px -1px 0px #0000FF inset;
-                        background: lightgreen;
-                    }
-                `}
-            </style>
-        </div>
+                        .selected {
+                            font-size: 18px;
+                            box-shadow: 0px -1px 0px #0000FF inset;
+                            background: lightgreen;
+                        }
+                    `}
+                </style>
+            </div>
+        </Link>
     );
 
     /**
