@@ -6,10 +6,14 @@ const next = require('next');
 
 
 // Make a NextJs instance
-const app = next({
+const nextParam = {
     dev: process.env.NODE_ENV !== 'prod',
     dir: "./client-nextjs"
-});
+};
+
+console.log('   nextParam: ', nextParam);
+
+const app = next(nextParam);
 
 console.log('   ENV: ', process.env.NODE_ENV);
 

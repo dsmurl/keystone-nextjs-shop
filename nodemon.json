@@ -1,6 +1,6 @@
 {
   "verbose": true,
-  "ignore": ["node_modules", "client-nextjs/.next"],
-  "watch": ["client-nextjs/**/*", "index.js"],
+  "ignore": ["node_modules", "./client-nextjs/.next"],
+  "watch": ["./client-nextjs", "index.js"],
   "ext": "js json"
 }

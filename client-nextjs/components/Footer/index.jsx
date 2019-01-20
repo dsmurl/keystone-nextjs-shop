@@ -62,7 +62,7 @@ class Footer extends React.Component {
         return (
             <div className="content">
                 <div>
-                    Hill Country Ornate TM 2018
+                    Keystone Shop TM 2018
                 </div>
                 <div className="adminButton">
                     <Link
