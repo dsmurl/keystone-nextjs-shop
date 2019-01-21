@@ -13,7 +13,7 @@ import Meta from '../Meta';
  *
  **/
 
-class Header extends React.Component {
+class Index extends React.Component {
 
     /**
      *
@@ -153,4 +153,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+export default Index;

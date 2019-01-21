@@ -65,7 +65,7 @@ class HomePage extends React.Component {
         return (
             <div className="homePage">
                 <Header page="Home"/>
-                <h3>Home Page 321</h3>
+                <h3>Home Page</h3>
                 <Footer />
 
                 { /*language=CSS*/ }

@@ -33,6 +33,4 @@ exports = module.exports = (nextApp) => (keystoneApp) => {
     keystoneApp.get('*', (req, res) => {
         return handle(req, res);
     });
-
-
 };

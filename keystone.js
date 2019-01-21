@@ -4,17 +4,14 @@ require('dotenv').config();
 const keystone = require('keystone');
 const next = require('next');
 
-
 // Make a NextJs instance
 const nextParam = {
     dev: process.env.NODE_ENV !== 'prod',
-    dir: "./client-nextjs"
+    dir: './client-nextjs'
 };
 
 console.log('   nextParam: ', nextParam);
-
-const app = next(nextParam);
-
+const nextApp = next(nextParam);
 console.log('   ENV: ', process.env.NODE_ENV);
 
 // Initialise Keystone with your project's configuration.
@@ -30,6 +27,7 @@ keystone.init({
     'static': [
         './server/public/',
     ],
+
     // Keystone includes an updates framework,
     // which you can enable by setting the auto update option to true.
     // Updates provide an easy way to seed your database,
@@ -50,11 +48,12 @@ keystone.init({
 // Load your project's Models
 keystone.import('./server/models');
 
+
 // Start Next app
-app.prepare()
+nextApp.prepare()
     .then(() => {
         // Load your project's Routes
-        keystone.set('routes', require('./server/routes')(app));
+        keystone.set('routes', require('./server/routes')(nextApp));
 
         // Configure the navigation bar in Keystone's Admin UI
         keystone.set('nav', {

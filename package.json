@@ -2,11 +2,12 @@
   "name": "keystone-nextjs-shop",
   "version": "1.0.0",
   "description": "A Shop CMS website make with Keystone JS CMS, React, and Redux",
-  "main": "index.js",
+  "main": "keystone.js",
   "scripts": {
     "build": "next build client-nextjs",
-    "dev": "NODE_ENV=dev node index.js",
-    "start:prod": "NODE_ENV=prod forever start index.js",
+    "dev": "node keystone.js",
+    "start": "next",
+    "start:prod": "NODE_ENV=prod forever start keystone.js",
     "stop:prod": "forever stopall",
     "db:backup": "cd mongo; ./backup-mongo.sh",
     "db:restore": "cd mongo; ./restore-mongo.sh",
@@ -17,6 +18,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "^6.2.0",
+    "express": "^4.16.4",
     "keystone": "^4.0.0",
     "next": "^7.0.2",
     "normalize.css": "^8.0.0",
