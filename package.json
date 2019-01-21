@@ -6,7 +6,6 @@
   "scripts": {
     "build": "next build client-nextjs",
     "dev": "node keystone.js",
-    "start": "next",
     "start:prod": "NODE_ENV=prod forever start keystone.js",
     "stop:prod": "forever stopall",
     "db:backup": "cd mongo; ./backup-mongo.sh",
@@ -20,7 +19,7 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "keystone": "^4.0.0",
-    "next": "^7.0.2",
+    "next": "^6.0.2",
     "normalize.css": "^8.0.0",
     "path": "^0.12.7",
     "react": "^16.7.0",
