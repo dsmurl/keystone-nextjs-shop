@@ -5,14 +5,12 @@ const keystone = require('keystone');
 const next = require('next');
 
 // Make a NextJs instance
-const nextParam = {
+const nextApp = next({
     dev: process.env.NODE_ENV !== 'prod',
     dir: './client-nextjs'
-};
+});
 
-console.log('   nextParam: ', nextParam);
-const nextApp = next(nextParam);
-console.log('   ENV: ', process.env.NODE_ENV);
+console.log('   NODE_ENV: ', process.env.NODE_ENV);
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options

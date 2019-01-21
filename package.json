@@ -4,10 +4,10 @@
   "description": "A Shop CMS website make with Keystone JS CMS, React, and Redux",
   "main": "keystone.js",
   "scripts": {
-    "build": "next build client-nextjs",
-    "dev": "node keystone.js",
-    "start:prod": "NODE_ENV=prod forever start keystone.js",
-    "stop:prod": "forever stopall",
+    "dev:start": "rm -rf client-nextjs/.next;  NODE_ENV=dev node keystone.js",
+    "prod:test": "rm -rf client-nextjs/.next;  next build client-nextjs;  NODE_ENV=prod node keystone.js",
+    "prod:start": "rm -rf client-nextjs/.next;  next build client-nextjs;  NODE_ENV=prod forever start keystone.js",
+    "prod:stop": "forever stopall",
     "db:backup": "cd mongo; ./backup-mongo.sh",
     "db:restore": "cd mongo; ./restore-mongo.sh",
     "db:drop": "cd mongo; ./drop-mongo.sh"
@@ -19,23 +19,13 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "keystone": "^4.0.0",
-    "next": "^6.0.2",
-    "normalize.css": "^8.0.0",
+    "next": "^7.0.2",
     "path": "^0.12.7",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
-    "css-loader": "^2.1.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.5",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "nodemon": "^1.18.9",
-    "style-loader": "^0.23.0",
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
+    "nodemon": "^1.18.9"
   }
 }
